@@ -9,7 +9,7 @@ function playSound(name, volume){
     return sound
 }
 var amountOfSquares = 0;
-var speed = 0;
+var speedAmount = 0;
 var squareToClick = 0;
 var isClickable = false;
 var result = false;
@@ -45,7 +45,7 @@ function calcSpeed(prev, next) {
   
   var greatest = x > y ? x : y;
   
-  var speedModifier = speed;
+  var speedModifier = speedAmount;
 
   var speed = Math.ceil(greatest/speedModifier);
 
@@ -93,7 +93,7 @@ async function startHack()
   result = false;
   isClickable = false;
   squareToClick = 1;
-  speed =  document.getElementById("speed").value;
+  speedAmount =  document.getElementById("speed").value;
   amountOfSquares = document.getElementById("amount").value;
   timeToRemember = document.getElementById("timeToRemember").value;
   for(var i = 1; i <= amountOfSquares; i ++)

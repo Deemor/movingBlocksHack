@@ -1,0 +1,33 @@
+#main
+{
+    display:none;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:50px;
+    width:1150px;
+    height:650px;
+    background-color: #222832;
+}
+.square
+{
+    
+    text-align: center;
+    color:white;
+    font-size:60px;
+    position:fixed;
+    width:100px;
+    height:100px;
+    background-color: #1e3955;
+}
+
+
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}

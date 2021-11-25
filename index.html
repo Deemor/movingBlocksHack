@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+	  	<meta charset="utf-8" />
+	  	<title>MovingBlocks</title>
+	  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet"> 
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="src/movingBlocks.js" defer></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet"> 
+	</head>
+
+	<body style="background-color: #1b1b1b; ">
+		<div id="settings">
+			<button type="button" class="btn btn-primary btn-lg mx-auto d-flex" id="buttonStart" style="margin-top:300px;">Start hack</button>
+			<nav class="navbar fixed-bottom navbar-dark bg-dark">
+				<div class="row w-100 px-5">
+					<div class="col w-25">
+						<p class="h5 d-flex justify-content-left mt-2 mb-2" style="color:#33da6a;">
+							Ilosc liczb	&nbsp;&nbsp;
+							<span class="badge bg-success" id="amountBadge">x</span>
+						</p>
+						<input type="range" class="form-range" min="1" max="32" step="1" id="amount" oninput="amountChange()">
+					</div>
+					<div class="col w-25">
+						<p class="h5 d-flex justify-content-left mt-2 mb-2" style="color:#33da6a;">
+							Czas na zapamietanie	&nbsp;&nbsp;
+							<span class="badge bg-success" id="timeToRememberBadge">x</span>
+						</p>
+						<input type="range" class="form-range" min="1" max="30" step="1" id="timeToRemember" oninput="timeToRememberChange()">
+					</div>
+					<div class="col w-25">
+						<p class="h5 d-flex justify-content-left mt-2 mb-2" style="color:#33da6a;">
+							Predkosc poruszania sie kafelkow	&nbsp;&nbsp;
+							<span class="badge bg-success" id="speedBadge">x</span>
+						</p>
+						<input type="range" class="form-range" min="0.05" max="0.6" step="0.01" id="speed" oninput="speedChange()">
+					</div>
+				</div>
+				<a class="navbar-brand p-3" href="#">MovingBlocks - Odwzorowanie hacka z serwera NOPIXEL GTA V RolePlay</a>
+			  </nav>
+		</div>
+		
+		<div id="main" style="display:none;">
+			
+		</div>
+
+		<div id="updateDiv"></div>
+		
+
+		
+		
+		<script>
+			var default_timeToRemember = 4;
+			var default_amount = 5;
+			var default_speed = 0.12;
+			document.getElementById("amountBadge").innerHTML=String(default_amount);
+			document.getElementById("amount").value=default_amount;
+
+			document.getElementById("timeToRememberBadge").innerHTML=String(default_timeToRemember);
+			document.getElementById("timeToRemember").value=default_timeToRemember;
+
+			document.getElementById("speedBadge").innerHTML=String(default_speed);
+			document.getElementById("speed").value=default_speed;
+		
+			function timeToRememberChange(){
+				document.getElementById("timeToRememberBadge").innerHTML=document.getElementById("timeToRemember").value;
+			}
+			function amountChange(){
+				document.getElementById("amountBadge").innerHTML=document.getElementById("amount").value;
+			}
+			function speedChange(){
+				document.getElementById("speedBadge").innerHTML=document.getElementById("speed").value;
+			}
+		</script>
+	</body>
+</html>
+

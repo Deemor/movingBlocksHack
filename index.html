@@ -21,6 +21,13 @@
 		<div id="settings">
 			<button type="button" class="btn btn-primary btn-lg mx-auto d-flex" id="buttonStart" style="margin-top:300px;">Start hack</button>
 			<nav class="navbar fixed-bottom navbar-dark bg-dark">
+				<div class="row px-4">
+					<p class="h5 my-3" style="color:#33da6a;">Wybierz preset: *prędkość poruszania się kafelków nie jest idealnie odwzorowana </p>
+		
+					<button type="button" class="btn btn-success btn col mx-2"  onClick='setPreset(6,4,0.14,1,0)'>Jeden kolor kafelków(tez jakis heist na NOPIXEL'u)</button>
+					<button type="button" class="btn btn-success btn col mx-2"  onClick='setPreset(10,10,0.14,5,1)'>Casino Heist NOPIXEL</button>
+					<p class="h5 my-2" style="color:#33da6a;">Lub ustaw parametry samodzielnie:</p>
+				</div>
 				<div class="row w-100 px-5">
 					<div class="col w-25">
 						<p class="h5 d-flex justify-content-left mt-2 mb-2" style="color:#33da6a;">
@@ -107,6 +114,20 @@
 			}
 			function borderChange(){
 				document.getElementById("borderBadge").innerHTML=document.getElementById("border").value == 0? "nie": "tak";
+			}
+
+			function setPreset(amount, time, speed, colors, border)
+			{
+				document.getElementById("amountBadge").innerHTML=String(amount);
+				document.getElementById("amount").value=amount;
+				document.getElementById("timeToRememberBadge").innerHTML=String(time);
+				document.getElementById("timeToRemember").value=time;
+				document.getElementById("speedBadge").innerHTML=String(speed);
+				document.getElementById("speed").value=speed;
+				document.getElementById("colorsBadge").innerHTML=String(colors);
+				document.getElementById("colors").value=colors;
+				document.getElementById("borderBadge").innerHTML= border == 0? "nie": "tak";
+				document.getElementById("border").value=border;
 			}
 		</script>
 	</body>

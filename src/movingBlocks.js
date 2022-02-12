@@ -2,6 +2,15 @@ const randomInt = (max) => Math.floor(Math.random() * Math.floor(max))
 const delay = t => new Promise(res => setTimeout(res, t * 1000));
 const shuffleArray = (array) => array.map((a) => ({sort: Math.random(), value: a})).sort((a, b) => a.sort - b.sort).map((a) => a.value)
 
+
+var COLORS_IF_MORE_THAN_ONE = ['#088f90', '#708fae', '#1335a3', '#0047ab', '#6494ed', '#00018b']
+const CLICKED_IF_MORE_THAN_ONE = '#30475d'
+
+const COLOR_IF_ONE = '#1e3955'
+const CLICKED_IF_ONE = '#30475d'
+
+
+
 function playSound(name, volume){
     const sound = new Audio(name)
     sound.volume = volume || 0.15;
@@ -11,9 +20,27 @@ function playSound(name, volume){
 var amountOfSquares = 0;
 var speedAmount = 0;
 var squareToClick = 0;
+var amountOfColors = 1;
 var isClickable = false;
 var result = false;
 var timeToRemember = 0;
+var isBorder = 0;
+
+function getColorOfSquare(){
+  if(amountOfColors == 1){
+    return COLOR_IF_ONE;
+  }else{
+    return COLORS_IF_MORE_THAN_ONE[randomInt(amountOfColors)];
+  }
+}
+
+function getColorOfSquareAfterClick(){
+  if(amountOfColors == 1){
+    return CLICKED_IF_ONE;
+  }else{
+    return CLICKED_IF_MORE_THAN_ONE;
+  }
+}
 function makeNewPosition(){
     
   // Get viewport dimensions (remove the dimension of the div)
@@ -59,7 +86,8 @@ function squareClick(divID)
     if(divID == squareToClick)
     {
       squareToClick+=1;
-      $("#s"+String(divID)).css("background-color","#30475d")
+      $("#s"+String(divID)).css("background-color",getColorOfSquareAfterClick())
+      $("#s"+String(divID)).css("border","0px solid white")
       if(divID == amountOfSquares)
       {
         result = true;
@@ -90,18 +118,25 @@ function hideNumbers()
 }
 async function startHack()
 {
+  COLORS_IF_MORE_THAN_ONE = shuffleArray(COLORS_IF_MORE_THAN_ONE)
   result = false;
   isClickable = false;
   squareToClick = 1;
   speedAmount =  document.getElementById("speed").value;
   amountOfSquares = document.getElementById("amount").value;
   timeToRemember = document.getElementById("timeToRemember").value;
+  amountOfColors =  document.getElementById("colors").value;
+  isBorder =  document.getElementById("border").value;
   for(var i = 1; i <= amountOfSquares; i ++)
   {
     $("#main").append(`<div class="square noselect" id="s`+String(i)+`" onclick="squareClick(`+String(i)+`);"> </div>`);
     var newPosition = makeNewPosition();
     $("#s"+String(i)).css("top",String(newPosition[0])+"px");
     $("#s"+String(i)).css("left",String(newPosition[1])+"px");
+    $("#s"+String(i)).css("background-color", getColorOfSquare())
+    if(isBorder == 1){
+      $("#s"+String(i)).css("border", "1px solid white")
+    }
   }
   for(var i = 1; i <= amountOfSquares; i ++)
   {

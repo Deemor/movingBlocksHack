@@ -10,14 +10,12 @@
 }
 .square
 {
-    
     text-align: center;
     color:white;
     font-size:60px;
     position:fixed;
     width:100px;
     height:100px;
-    background-color: #1e3955;
 }
 
 

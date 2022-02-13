@@ -25,6 +25,10 @@ var isClickable = false;
 var result = false;
 var timeToRemember = 0;
 var isBorder = 0;
+var main_size = 0;
+
+var main_width = [1150, 1540]
+var main_height = [650 , 870]
 
 function getColorOfSquare(){
   if(amountOfColors == 1){
@@ -127,6 +131,11 @@ async function startHack()
   timeToRemember = document.getElementById("timeToRemember").value;
   amountOfColors =  document.getElementById("colors").value;
   isBorder =  document.getElementById("border").value;
+  main_size = document.getElementById("mainSize").value;
+
+  $("#main").height(main_height[main_size])
+  $("#main").width(main_width[main_size])
+
   for(var i = 1; i <= amountOfSquares; i ++)
   {
     $("#main").append(`<div class="square noselect" id="s`+String(i)+`" onclick="squareClick(`+String(i)+`);"> </div>`);

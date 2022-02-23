@@ -293,10 +293,10 @@ async function startHack()
     progBar.animate({
       width: "0px"
     }, {
-      duration: 3*1000,
+      duration: 500,
       ease: "linear",
     });
-    await delay(timeToRemember);
+    await delay(0.5);
     await stopProgressBar();
     return result;
   }else if(type=="NOPIXEL")

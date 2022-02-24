@@ -22,9 +22,9 @@
 			<button type="button" class="btn btn-primary btn-lg mx-auto d-flex" id="buttonStart" style="margin-top:300px;">Start hack</button>
 			<nav class="navbar fixed-bottom navbar-dark bg-dark">
 				<div class="row px-4">
-					<p class="h5 my-3" style="color:#33da6a;">Wybierz preset: *prędkość poruszania się kafelków nie jest idealnie odwzorowana </p>
+					<p class="h5 my-3" style="color:#33da6a;">Wybierz preset: </p>
 		
-					<button type="button" class="btn btn-success btn col mx-2"  onClick='setPreset(6,4,0.14,1,0,0,1,0)'>Jeden kolor kafelków(tez jakis heist na NOPIXEL'u)</button>
+					<button type="button" class="btn btn-success btn col mx-2"  onClick='setPreset(6,4,0.14,1,0,0,1,0)'>MONO Heist NOPIXEL</button>
 					<button type="button" class="btn btn-success btn col mx-2"  onClick='setPreset(10,10,0.18,5,1,1,1,0)'>Casino Heist NOPIXEL</button>
 					<button type="button" class="btn btn-danger btn col mx-2"  onClick='setPreset(6,4,0.25,1,0,0,1,1)'>5CITY</button>
 					<p class="h5 my-2" style="color:#33da6a;">Lub ustaw parametry samodzielnie:</p>
@@ -89,7 +89,7 @@
 						<input type="range" class="form-range" min="0.5" max="5" step="0.1" id="time5CITY" oninput="time5CITYChange()">
 					</div>
 				</div>
-				<a class="navbar-brand p-3" href="#">MovingBlocks - Odwzorowanie hacka z serwera NOPIXEL GTA V RolePlay</a>
+				<a class="navbar-brand p-3" href="#">MovingBlocks - Odwzorowanie hacka z serwera NOPIXEL GTA V RolePlay oraz 5CITY GTA V ROLEPLAY</a>
 			  </nav>
 		</div>
 		
@@ -126,7 +126,7 @@
 			var default_colors = 1;
 			var default_border = 0;
 			var default_main_size = 0;
-			var default_type = 0;
+			var default_type = 1;
 			var default_time5CITY = 1;
 		
 			document.getElementById("amountBadge").innerHTML=String(default_amount);

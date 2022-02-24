@@ -122,6 +122,12 @@ function animateDiv5City(){
 
   
 };
+function stopAnimation(){
+  for(var i = 1; i <= amountOfSquares; i ++)
+  {
+    $("#s"+String(i)).stop();
+  }
+}
 async function stopProgressBar()
 {
   $("#progress-bar").stop(true,true);
@@ -307,7 +313,7 @@ async function startHack()
 }
 async function start(){
   type = document.getElementById("type").value == 0? "NOPIXEL": "5CITY";;
-
+  stopAnimation();
   $('#main').empty();
   $('#main5CityBox').empty();
   $("#settings").hide();
@@ -319,6 +325,7 @@ async function start(){
     $("#main").show();
   }
   var result = await startHack();
+  stopAnimation();
   result == true ? $("#buttonStart").html("Success. Try again") : $("#buttonStart").html("Failed. Try again");
   $("#settings").show();
   $("#main").hide();

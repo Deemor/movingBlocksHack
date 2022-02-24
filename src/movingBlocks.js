@@ -192,7 +192,7 @@ async function startNopixelHack()
 
   for(var i = 1; i <= amountOfSquares; i ++)
   {
-    $("#main").append(`<div class="square noselect" id="s`+String(i)+`" onclick="squareClick(`+String(i)+`);"> </div>`);
+    $("#main").append(`<div class="square noselect" id="s`+String(i)+`" onmousedown="squareClick(`+String(i)+`);"> </div>`);
     var newPosition = makeNewPosition();
     $("#s"+String(i)).css("top",String(newPosition[0])+"px");
     $("#s"+String(i)).css("left",String(newPosition[1])+"px");
@@ -226,7 +226,7 @@ async function start5CityHack()
 {
   for(var i = 1; i <= amountOfSquares; i ++)
   {
-    $("#main5CityBox").append(`<div class="square noselect" id="s`+String(i)+`" onclick="squareClick(`+String(i)+`);"> </div>`);
+    $("#main5CityBox").append(`<div class="square noselect" id="s`+String(i)+`" onmousedown="squareClick(`+String(i)+`);"> </div>`);
     var newPosition = makeNewPosition();
     $("#s"+String(i)).css("top",String(newPosition[0])+"px");
     $("#s"+String(i)).css("left",String(newPosition[1])+"px");

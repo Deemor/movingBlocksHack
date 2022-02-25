@@ -169,7 +169,7 @@ function squareClick(divID)
         $("#updateDiv").html("x");
         $("#updateDiv").html("");
       }
-    }else if(divID > squareToClick)
+    }else if(divID != squareToClick)
     {
       result = false;
       $("#updateDiv").html("x");
